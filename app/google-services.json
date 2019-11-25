@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "891963689526",
+    "firebase_url": "https://mafraq-city.firebaseio.com",
+    "project_id": "mafraq-city",
+    "storage_bucket": "mafraq-city.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891963689526:android:3253b3b165e8b5d3c8e697",
+        "android_client_info": {
+          "package_name": "com.example.mafraqapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891963689526-lnadbku2ar9c4vo81pdd4n5r9fjhmt99.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mafraqapp",
+            "certificate_hash": "b3c1a927367ca47009b09f116fe5d4f904204866"
+          }
+        },
+        {
+          "client_id": "891963689526-3bp24c0mhnj3mudp7alvahl2db3ki38b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGPEkjzwCE0Efvxf9nuIZofbvZJuvEMyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891963689526-3bp24c0mhnj3mudp7alvahl2db3ki38b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
