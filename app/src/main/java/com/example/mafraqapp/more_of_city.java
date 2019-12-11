@@ -1,7 +1,17 @@
 package com.example.mafraqapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,13 +29,12 @@ public class more_of_city extends AppCompatActivity implements OnMapReadyCallbac
     ImageView img ;
     TextView name , desc;
     private GoogleMap mMap;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_of_city);
-        img = findViewById(R.id.img);
-        //Picasso.get().load(getIntent().getStringExtra("img"));
+        img = findViewById(R.id.img2);
+        Picasso.get().load(getIntent().getStringExtra("img")).into(img);
         name = findViewById(R.id.name);
         name.setText(getIntent().getStringExtra("name"));
         desc = findViewById(R.id.desc);
@@ -39,7 +48,6 @@ public class more_of_city extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMyLocationEnabled(true);
         double lat = Double.parseDouble(getIntent().getStringExtra("lat").trim());
         double lng = Double.parseDouble(getIntent().getStringExtra("lng").trim());
         LatLng location = new LatLng(lat, lng);
@@ -47,4 +55,6 @@ public class more_of_city extends AppCompatActivity implements OnMapReadyCallbac
         mMap.addMarker(marker);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
     }
+
+
 }

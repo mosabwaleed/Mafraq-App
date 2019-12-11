@@ -31,7 +31,7 @@ public class Citys_adapter extends RecyclerView.Adapter<Citys_adapter.MyViewHold
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final city o = list.get(position);
         holder.name.setText(o.getName());
-        //Picasso.get().load(o.getImg()).fit().into(holder.img);
+        Picasso.get().load(o.getImg()).into(holder.img);
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -19,7 +19,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     RecyclerView rec;
     List<city> arrayList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,17 +32,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()){
-                   arrayList.add( new city(ds.getKey(),"",ds.child("desc").getValue().toString(),ds.child("lat").getValue().toString(),ds.child("lng").getValue().toString()));
+                   arrayList.add( new city(ds.getKey(),ds.child("img").getValue().toString(),ds.child("desc").getValue().toString(),ds.child("lat").getValue().toString(),ds.child("lng").getValue().toString()));
+                    System.out.println("img             " + ds.child("img").getValue());
                 }
                 Citys_adapter citys_adapter = new Citys_adapter(arrayList,MainActivity.this);
                 rec.setAdapter(citys_adapter);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
     }
 }
